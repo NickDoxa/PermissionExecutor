@@ -10,7 +10,6 @@ import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.RegisteredServiceProvider;
-import org.geysermc.floodgate.api.FloodgateApi;
 
 import net.luckperms.api.LuckPerms;
 import net.luckperms.api.LuckPermsProvider;
@@ -23,10 +22,9 @@ import net.oasisgames.pexec.config.ConfigConnect;
 public class Tasks {
 	
 	private final YamlConfiguration config;
-	
 	private final LuckPerms luckPerms;
-	
 	private final boolean msgs;
+	private final boolean geyserOrFloodgate;
 	
 	public Tasks() {
 		config = ConfigConnect.getConfig();
@@ -39,6 +37,7 @@ public class Tasks {
 		}
 		luckPerms = api;
 		msgs = config.getBoolean("messagePlayers");
+		geyserOrFloodgate = config.getBoolean("geyserOrFloodgate");
 	}
 
 	//Store info: Task Name, Perm string
@@ -100,8 +99,13 @@ public class Tasks {
 					.build();
 			User user = luckPerms.getUserManager().getUser(player.getUniqueId());
 			if (floodgate) {
-				if (!FloodgateApi.getInstance().isFloodgatePlayer(player.getUniqueId()))
-					return;
+				if (geyserOrFloodgate) {
+					if (!BedrockCheck.isPlayerBedrockGeyser(player))
+						return;
+				} else {
+					if (!BedrockCheck.isPlayerBedrockFloodgate(player))
+						return;
+				}
 				//FLOODGATE TASKS
 				if (gOrT) {
 					//ADD PERM

@@ -1,6 +1,9 @@
 #Enable to send player a message when their perms are directly changed by Permission Executor
 messagePlayers: false
-
+#geyserOrFloodgate decides which API to bank off of in order to check for bedrock connections.
+#true for geyser
+#false for floodgate
+geyserOrFloodgate: true
 #Tasks to be ran based on a series of variables. You can name your tasks anything just dont have duplicate names or only one will work.
 tasks:
   exampletask:
