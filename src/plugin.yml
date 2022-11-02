@@ -1,0 +1,7 @@
+name: PermissionExecutor
+version: 1.0
+author: NickDoxa
+main: net.oasisgames.pexec.Main
+description: Join permissions system ran by LuckPerms and Floodgate created by Nick Doxa
+depends: [LuckPerms, Floodgate]
+api-version: 1.19

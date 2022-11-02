@@ -1,0 +1,20 @@
+#Enable to send player a message when their perms are directly changed by Permission Executor
+messagePlayers: false
+
+# will run on any player regardless of connection status.
+tasks:
+  exampletask:
+    #List the permission node to add or remove
+    permission: 'example.perm'
+    #Set 'giveOrTake' to true to add and false to remove!
+    giveOrTake: true
+    #Set 'negativeOrPositive' to true for a true permission or false for a false permission
+    negativeOrPositive: true
+    #Set 'floodgate' to true to make this task happen only to floodgate bedrock players
+    floodgate: false
+    #Set 'groupPerm' to add to group 
+    #NOTE you must setup 'group' for group perms to work otherwise it will be assigned directly to the player
+    groupPerm: false
+    #Set group to send perm to specific group
+    #NOTE you must enable groupPerm for group to work
+    group: ''
