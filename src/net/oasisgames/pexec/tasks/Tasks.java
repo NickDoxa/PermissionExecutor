@@ -50,7 +50,7 @@ public class Tasks {
 	//Store info: Task Name, Floodgate bool
 	private	Map<String, Boolean> floodMap = new HashMap<String, Boolean>();
 	//Total tasks list
-	List<String> taskList = new ArrayList<String>();
+	protected List<String> taskList = new ArrayList<String>();
 	
 	
 	public void createNodes(String section) {
