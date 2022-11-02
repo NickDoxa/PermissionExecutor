@@ -87,7 +87,8 @@ public class Tasks {
 			}
 		}
 	}
-	
+
+	@SuppressWarnings("deprecation")
 	private void applyPermChanges(Player player) {
 		for (String tasks : taskList) {
 			String perm = permMap.get(tasks);

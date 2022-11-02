@@ -12,6 +12,7 @@ public class BedrockCheck {
 		return FloodgateApi.getInstance().isFloodgatePlayer(player.getUniqueId());
 	}
 	
+	@Deprecated
 	public static boolean isPlayerBedrockGeyser(Player player) {
 		GeyserSession session = GeyserConnector.getInstance().getPlayerByUuid(player.getUniqueId());
 		if (session == null)
